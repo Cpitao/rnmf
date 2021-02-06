@@ -9,7 +9,6 @@ class Interpreter:
     def validate_arguments(params):
         sorting_methods = ['a', 'm', None]
         # a for alphabetical sorting
-        # n for numerical sorting
         # m for sorting by last modification date (the oldest go first)
         # None for no sorting (input order)
 
