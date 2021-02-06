@@ -30,13 +30,11 @@ class Interpreter:
 
 
     def unpack_arguments():
-        arg_list = ['--sort', '--pattern']
-
-        # patterns in ""
+        # patterns
         # with \i denoting where to put the index(at the end by default)
         # if files are grouped, then \g denotes group index
         
-        sort_aliases = ['--sort', '-s']
+        sort_aliases = ('--sort', '-s')
         # sort alphabetically / by modification date
         # to sort numerically it is advised to input already sorted file names
 
