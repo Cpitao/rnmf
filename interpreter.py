@@ -9,7 +9,6 @@ class Interpreter:
     def validate_arguments(params):
         sorting_methods = ['a', 'm', None]
         # a for alphabetical sorting
-        # n for numerical sorting
         # m for sorting by last modification date (the oldest go first)
         # None for no sorting (input order)
 
@@ -31,13 +30,11 @@ class Interpreter:
 
 
     def unpack_arguments():
-        arg_list = ['--sort', '--pattern']
-
-        # patterns in ""
+        # patterns
         # with \i denoting where to put the index(at the end by default)
         # if files are grouped, then \g denotes group index
         
-        sort_aliases = ['--sort', '-s']
+        sort_aliases = ('--sort', '-s')
         # sort alphabetically / by modification date
         # to sort numerically it is advised to input already sorted file names
 

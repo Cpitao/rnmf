@@ -47,11 +47,11 @@ class NameGenerator:
             for j in range(len(params["files"][i])):
                 if len(params["files"][i]) > 1:
                     if "\\g" in new_name:
-                        new_name = params["pattern"].replace("\\i", i).replace("\\g", j+1)
+                        new_name = params["pattern"].replace("\\i", i + 1).replace("\\g", j+1)
                     else:
-                        new_name = params["pattern"].replace("\\i", f"{i}.{j + 1}")
+                        new_name = params["pattern"].replace("\\i", f"{i + 1}.{j + 1}")
                 else:
-                    new_name = params["pattern"].replace("\\i", str(i))
+                    new_name = params["pattern"].replace("\\i", str(i + 1)).replace("\\g", "")
                 if NameGenerator.is_name_available(new_name, params["files"][i][j]):
                     yield params["files"][i][j], new_name
                 else:
