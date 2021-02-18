@@ -8,11 +8,13 @@ if __name__ == "__main__":
 
     logger = Logger()
     
-    for old_name, name in NameGenerator.generate_name(params):
-        if name is not None:
+    for old_name, name, correct_name in NameGenerator.generate_name(params):
+        if correct_name:
             os.rename(old_name, name)
         else:
-            logger.omitted_files.append(old_name, name)
+            logger.omitted_files.append((old_name, name))
+
+
     if logger.omitted_files:
         logger.handle_omitted()
 # rnmf [PATTERN] (--sort a/m) [FILES] 
